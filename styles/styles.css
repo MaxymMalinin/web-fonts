@@ -15,6 +15,11 @@ body {
   align-items: center;
   gap: 50px;
 }
+.header_container {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
 .header_button {
   font-family: "Tourney", sans-serif;
   font-weight: 600;
@@ -37,8 +42,13 @@ body {
   margin-left: auto;
 }
 
+.main {
+  margin-bottom: 90px;
+}
+
 .section {
   margin-top: 70px;
+  padding: 0 10px;
 }
 
 .heading {
@@ -66,4 +76,9 @@ body {
 
 .link {
   text-decoration: underline;
+}
+
+.code {
+  font-family: "PT Sans", sans-serif;
+  background-color: #dadada;
 }/*# sourceMappingURL=styles.css.map */
