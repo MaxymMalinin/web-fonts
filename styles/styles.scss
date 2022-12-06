@@ -40,3 +40,34 @@ body {
     margin-left: auto;
   }
 }
+
+.section {
+  margin-top: 70px;
+}
+
+.heading {
+  font-family: "Francois One", sans-serif;
+  font-size: 36px;
+  line-height: 1.333;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.superscript {
+  font-family: "Farro", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  height: 20px;
+  vertical-align: super;
+  text-transform: capitalize;
+}
+
+.paragraph {
+  margin-top: 40px;
+}
+
+.link {
+  text-decoration: underline;
+}
