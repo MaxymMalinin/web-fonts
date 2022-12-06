@@ -1,1 +1,38 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 28px;
+  line-height: 1.714;
+}
+
+.center {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  padding: 13px 10px;
+  align-items: center;
+  gap: 50px;
+}
+.header_button {
+  font-family: "Tourney", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.222;
+  letter-spacing: 0.06em;
+}
+.header_button::first-letter {
+  letter-spacing: 0.04em;
+}
+.header_list {
+  display: flex;
+  font-family: "Staatliches", sans-serif;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  gap: 10px;
+}
+.header_image {
+  margin-left: auto;
+}/*# sourceMappingURL=styles.css.map */
