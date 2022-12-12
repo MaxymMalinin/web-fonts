@@ -1,3 +1,5 @@
+@use "_fonts.scss";
+
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 28px;
@@ -14,32 +16,37 @@ body {
   padding: 13px 10px;
   align-items: center;
   gap: 50px;
-}
-.header_container {
-  display: flex;
-  align-items: flex-start;
-  gap: 50px;
-}
-.header_button {
-  font-family: "Tourney", sans-serif;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1.222;
-  letter-spacing: 0.06em;
-}
-.header_button::first-letter {
-  letter-spacing: 0.04em;
-}
-.header_list {
-  display: flex;
-  font-family: "Staatliches", sans-serif;
-  font-size: 22px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
-  gap: 10px;
-}
-.header_image {
-  margin-left: auto;
+
+  &_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  &_button {
+    font-family: "Tourney", cursive;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.222;
+    letter-spacing: 0.06em;
+
+    &::first-letter {
+      letter-spacing: 0.04em;
+    }
+  }
+
+  &_list {
+    display: flex;
+    font-family: "Staatliches", cursive;
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    gap: 10px;
+  }
+
+  &_image {
+    margin-left: auto;
+  }
 }
 
 .main {
@@ -81,4 +88,4 @@ body {
 .code {
   font-family: "PT Sans", sans-serif;
   background-color: #dadada;
-}/*# sourceMappingURL=styles.css.map */
+}
