@@ -5,6 +5,8 @@ body {
   font-family: $font-family_primary;
   font-size: 28px;
   line-height: 1.714;
+  background: url(../img/bg-picture.svg) no-repeat fixed right
+    calc($header-height + $section_margin-top);
 }
 
 .center {
@@ -13,12 +15,21 @@ body {
 }
 
 .header {
-  display: flex;
-  padding: 13px 10px;
-  align-items: center;
-  gap: 50px;
+  position: fixed;
+  background-color: $color-bg_default;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
 
   &_container {
+    display: flex;
+    align-items: center;
+    padding: 13px 10px;
+    gap: 50px;
+  }
+
+  &_links {
     display: flex;
     align-items: flex-start;
     gap: 50px;
@@ -38,7 +49,7 @@ body {
 
   &_list {
     display: flex;
-    font-family: $font-family_nav;
+    font-family: $font-family_header;
     font-size: 22px;
     line-height: 1.25;
     letter-spacing: 0.03em;
@@ -51,16 +62,67 @@ body {
 }
 
 .logo {
+  display: block;
   width: 100%;
+  max-height: 54px;
 }
 
 .main {
+  display: flex;
+  gap: 30px;
+  margin-top: $header-height;
   margin-bottom: 90px;
 }
 
-.section {
+.aside {
+  white-space: nowrap;
+  position: relative;
   margin-top: 70px;
-  padding: 0 10px;
+  padding: 10px;
+
+  &_sticky {
+    position: sticky;
+    top: 160px;
+  }
+
+  &_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    &_item {
+      display: block;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}
+
+.section {
+  margin-top: $section_margin-top;
+  padding-right: 10px;
+
+  &:first-child {
+    margin-top: calc($section_margin-top + $divider-gap + $divider-height);
+
+    .heading__space {
+      &::before {
+        padding-top: calc(
+          $section_margin-top + $divider-gap + $divider-height + $header-height
+        );
+        margin-top: calc(
+          -1 * ($section_margin-top + $divider-gap + $divider-height +
+                $header-height)
+        );
+      }
+
+      &::after {
+        bottom: calc(
+          100% - ($section_margin-top + $divider-height + $header-height)
+        );
+      }
+    }
+  }
 }
 
 .heading {
@@ -69,6 +131,28 @@ body {
   line-height: 1.333;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+
+  &__space {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: calc($header-height + $section_margin-top);
+      margin-top: calc(-1 * ($header-height + $section_margin-top));
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: calc(
+        100% - ($header-height + $section_margin-top - $divider-gap)
+      );
+      border-top: $divider-height solid currentColor;
+      width: 100px;
+    }
+  }
 }
 
 .superscript {
