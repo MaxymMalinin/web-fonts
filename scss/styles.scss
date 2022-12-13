@@ -1,7 +1,8 @@
-@use "_fonts.scss";
+@use 'fonts';
+@import 'variables';
 
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: $font-family_primary;
   font-size: 28px;
   line-height: 1.714;
 }
@@ -24,7 +25,7 @@ body {
   }
 
   &_button {
-    font-family: "Tourney", cursive;
+    font-family: $font-family_button;
     font-weight: 600;
     font-size: 22px;
     line-height: 1.222;
@@ -37,7 +38,7 @@ body {
 
   &_list {
     display: flex;
-    font-family: "Staatliches", cursive;
+    font-family: $font-family_nav;
     font-size: 22px;
     line-height: 1.25;
     letter-spacing: 0.03em;
@@ -63,7 +64,7 @@ body {
 }
 
 .heading {
-  font-family: "Francois One", sans-serif;
+  font-family: $font-family_heading;
   font-size: 36px;
   line-height: 1.333;
   letter-spacing: 0.04em;
@@ -71,7 +72,7 @@ body {
 }
 
 .superscript {
-  font-family: "Farro", sans-serif;
+  font-family: $font-family_superscript;
   font-weight: 300;
   font-size: 20px;
   line-height: 1;
@@ -90,6 +91,6 @@ body {
 }
 
 .code {
-  font-family: "PT Sans", sans-serif;
-  background-color: #dadada;
+  font-family: $font-family_primary;
+  background-color: $color-bg_text;
 }
