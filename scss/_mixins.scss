@@ -1,0 +1,6 @@
+@mixin divider {
+  content: '';
+  display: inline-block;
+  width: 100px;
+  border-top: $divider-height solid currentColor;
+} ;

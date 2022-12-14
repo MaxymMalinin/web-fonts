@@ -1,12 +1,16 @@
 @use 'fonts';
 @import 'variables';
+@import 'mixins';
 
 body {
   font-family: $font-family_primary;
   font-size: 28px;
   line-height: 1.714;
+}
+
+.background {
   background: url(../img/bg-picture.svg) no-repeat fixed right
-    calc($header-height + $section_margin-top);
+    calc($header-height + $section-spacing-top);
 }
 
 .center {
@@ -68,17 +72,20 @@ body {
 }
 
 .main {
-  display: flex;
-  gap: 30px;
   margin-top: $header-height;
-  margin-bottom: 90px;
+  margin-bottom: 70px;
+  padding: 0 10px;
+
+  &__row {
+    display: flex;
+    gap: 40px;
+  }
 }
 
 .aside {
   white-space: nowrap;
   position: relative;
   margin-top: 70px;
-  padding: 10px;
 
   &_sticky {
     position: sticky;
@@ -98,27 +105,28 @@ body {
   }
 }
 
+.sections {
+  padding-bottom: 20px;
+}
+
 .section {
-  margin-top: $section_margin-top;
-  padding-right: 10px;
+  margin-top: calc($section-spacing-top + $divider-gap + $divider-height);
 
   &:first-child {
-    margin-top: calc($section_margin-top + $divider-gap + $divider-height);
-
     .heading__space {
       &::before {
         padding-top: calc(
-          $section_margin-top + $divider-gap + $divider-height + $header-height
+          $section-spacing-top + $divider-gap + $divider-height + $header-height
         );
         margin-top: calc(
-          -1 * ($section_margin-top + $divider-gap + $divider-height +
+          -1 * ($section-spacing-top + $divider-gap + $divider-height +
                 $header-height)
         );
       }
 
       &::after {
         bottom: calc(
-          100% - ($section_margin-top + $divider-height + $header-height)
+          100% - ($section-spacing-top + $divider-height + $header-height)
         );
       }
     }
@@ -132,25 +140,39 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
+  &__alt {
+    font-family: $font-family_heading-alt;
+    font-weight: 700;
+    text-transform: none;
+  }
+
+  &__line {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    &::before {
+      @include divider;
+    }
+  }
+
   &__space {
     position: relative;
 
     &::before {
       content: '';
       display: block;
-      padding-top: calc($header-height + $section_margin-top);
-      margin-top: calc(-1 * ($header-height + $section_margin-top));
+      padding-top: calc($header-height + $section-spacing-top);
+      margin-top: calc(-1 * ($header-height + $section-spacing-top));
     }
 
     &::after {
-      content: '';
-      display: block;
+      @include divider;
       position: absolute;
+      left: 0;
       bottom: calc(
-        100% - ($header-height + $section_margin-top - $divider-gap)
+        100% - ($header-height + $section-spacing-top - $divider-gap)
       );
-      border-top: $divider-height solid currentColor;
-      width: 100px;
     }
   }
 }
@@ -177,4 +199,8 @@ body {
 .code {
   font-family: $font-family_primary;
   background-color: $color-bg_text;
+}
+
+.content {
+  padding-top: $section-spacing-top;
 }
