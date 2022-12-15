@@ -204,3 +204,43 @@ body {
 .content {
   padding-top: $section-spacing-top;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  padding: 20px 15px;
+  border-top: 1px solid $color-border_cards;
+  border-bottom: 1px solid $color-border_cards;
+}
+
+.card {
+  height: 10vw;
+  max-height: 180px;
+  min-height: 110px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    height: 100%;
+
+    &__front {
+      @extend .card_content;
+      background-color: $color-bg_card-gray;
+    }
+
+    &__back {
+      @extend .card_content;
+      background-color: $color-bg_card-dark;
+    }
+  }
+
+  &_image {
+    width: 100%;
+  }
+}
