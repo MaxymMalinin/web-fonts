@@ -217,21 +217,27 @@ body {
   padding: 20px 15px;
   border-top: 1px solid $color-border_cards;
   border-bottom: 1px solid $color-border_cards;
+  perspective: 1000px;
 }
 
 .card {
+  position: relative;
   height: 10vw;
   max-height: 180px;
   min-height: 110px;
   border-radius: 8px;
-  overflow: hidden;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 
   &_content {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 30px;
     height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
 
     &__front {
       background-color: $color-bg_card-gray;
@@ -239,10 +245,15 @@ body {
 
     &__back {
       background-color: $color-bg_card-dark;
+      transform: rotateX(180deg);
     }
   }
 
   &_image {
     width: 100%;
+  }
+
+  &:hover {
+    transform: rotateX(180deg);
   }
 }
