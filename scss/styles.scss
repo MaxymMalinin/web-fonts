@@ -1,6 +1,6 @@
-@use 'fonts';
-@import 'variables';
-@import 'mixins';
+@import './_fonts.scss';
+@import './_variables.scss';
+@import './_placeholders.scss';
 
 body {
   font-family: $font-family_primary;
@@ -11,6 +11,10 @@ body {
 .background {
   background: url(../img/bg-picture.svg) no-repeat fixed right
     calc($header-height + $section-spacing-top);
+}
+
+.scroll {
+  overflow-y: scroll;
 }
 
 .center {
@@ -152,7 +156,7 @@ body {
     align-items: center;
 
     &::before {
-      @include divider;
+      @extend %divider;
     }
   }
 
@@ -167,7 +171,7 @@ body {
     }
 
     &::after {
-      @include divider;
+      @extend %divider;
       position: absolute;
       left: 0;
       bottom: calc(
@@ -230,12 +234,10 @@ body {
     height: 100%;
 
     &__front {
-      @extend .card_content;
       background-color: $color-bg_card-gray;
     }
 
     &__back {
-      @extend .card_content;
       background-color: $color-bg_card-dark;
     }
   }
